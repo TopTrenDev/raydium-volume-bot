@@ -60,9 +60,9 @@ npm run gather
 
 # 👤 Author
 
-### Twitter: [Dave Vasu](https://x.com/dieharye)   
+### Twitter: [Dieharye](https://x.com/dieharye)   
 https://x.com/dieharye
-### Telegram: [DaveVasu](https://t.me/vladmeer)   
+### Telegram: [Vladmeer](https://t.me/vladmeer)   
 https://t.me/vladmeer
 
 You can always find me here, for help, or for other projects.
