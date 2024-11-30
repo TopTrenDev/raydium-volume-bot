@@ -63,6 +63,6 @@ npm run gather
 ### Twitter: [Dieharye](https://x.com/dieharye)   
 https://x.com/dieharye
 ### Telegram: [Vladmeer](https://t.me/vladmeer67)   
-https://t.me/vladmeer
+https://t.me/vladmeer67
 
 You can always find me here, for help, or for other projects.
