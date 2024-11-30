@@ -61,8 +61,8 @@ npm run gather
 # 👤 Author
 
 ### Twitter: [Dave Vasu](https://x.com/RambautETH)   
-https://x.com/RambautETH
+https://x.com/dieharye
 ### Telegram: [DaveVasu](https://t.me/davevasu)   
-https://t.me/davevasu
+https://t.me/vladmeer
 
 You can always find me here, for help, or for other projects.
