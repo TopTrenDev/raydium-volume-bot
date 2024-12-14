@@ -56,7 +56,7 @@ npm start
 npm run gather
 ```
 
-## Author
+# Author
 
 ### Telegram: [Vladmeer](https://t.me/vladmeer67)   
 https://t.me/vladmeer67
