@@ -5,7 +5,7 @@ And add feature to boost volume in Marketplace.
 
 ### What is the main difference between the former volume booster and the updated one?
 
-## 🔧 Last Version's Demerits
+## 🔧 Last Version's Demerit
 - ❌ **Repetitive buy and sell with one wallet**: The last version of the Raydium Volume Bot used fixed wallets, so it was apparent on DexScreener that some wallets performed repetitive buy and sell actions.
 - ❌ **No increase in the number of holders**: It didn't increase the number of holders, only the volume.
 - ❌ **Gathering token instead of SOL**: When gathering, if there were tokens left, it didn't sell them before gathering. Instead, it just gathered tokens to the main wallet.
