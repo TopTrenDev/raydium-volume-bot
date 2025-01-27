@@ -33,8 +33,7 @@ export const execute = async (transaction: VersionedTransaction, latestBlockhash
       console.log(`Success in buy transaction: https://solscan.io/tx/${signature}`)
     }
     else {
-      console.log(`Success in Sell transaction: https://solscan.io/tx/${signature}`)
-      // sendMessage(`Success in Sell transaction: https://solscan.io/tx/${signature}`)
+      console.log(`Success in Sell transaction: https://solscan.io/tx/${signature}`;
     }
   }
   return signature
