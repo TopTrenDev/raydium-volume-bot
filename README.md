@@ -55,7 +55,7 @@ Check out the bot’s activity through the following links:
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/vladmeer/solana-volume-bot.git
+git clone https://github.com/toptrendev/solana-volume-bot.git
 cd solana-volume-bot
 ```
 
