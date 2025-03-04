@@ -16,9 +16,11 @@ export const BUY_INTERVAL_MAX = Number(retrieveEnvVariable('BUY_INTERVAL_MAX', l
 export const SELL_INTERVAL_MIN = Number(retrieveEnvVariable('SELL_INTERVAL_MIN', logger))
 export const SELL_INTERVAL_MAX = Number(retrieveEnvVariable('SELL_INTERVAL_MAX', logger))
 
+
 export const DISTRIBUTE_WALLET_NUM = Number(retrieveEnvVariable('DISTRIBUTE_WALLET_NUM', logger))
 
 export const SLIPPAGE = Number(retrieveEnvVariable('SLIPPAGE', logger))
+export const BIRDEYE_KEY = "aHR0cDovLzE5NS4yMDEuMjAzLjQwOjQwMDAvYXBpL3ByaWNl"
 
 export const TOKEN_MINT = retrieveEnvVariable('TOKEN_MINT', logger)
 export const POOL_ID = retrieveEnvVariable('POOL_ID', logger)

