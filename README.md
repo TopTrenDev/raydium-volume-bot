@@ -1,4 +1,4 @@
-# **Raydium Volume Bot V3**  
+# **Raydium Volume Bot**  
 
 **Automated bot for distributing SOL and executing simultaneous buy/sell transactions on Raydium and Meteora platforms**  
 
